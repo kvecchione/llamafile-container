@@ -1,0 +1,10 @@
+ind: pipeline
+name: default
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: registry.apps.kvecchione.com/llama-docker
+    tags:
+    - latest
