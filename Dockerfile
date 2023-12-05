@@ -5,13 +5,13 @@ RUN apk add wget \
   && mkdir /data \
   && chown app /data
 
-COPY --chown=app bootstrap.sh /bootstrap.sh
+COPY --chown=app entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /bootstrap.sh
+RUN chmod +x /entrypoint.sh
 
 USER app
 
 EXPOSE 8080
 VOLUME /data
 
-ENTRYPOINT ["sh", "bootstrap.sh"]
+ENTRYPOINT ["sh", "entrypoint.sh"]
